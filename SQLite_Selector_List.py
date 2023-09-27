@@ -1,7 +1,7 @@
 class SQLite_Selector_List:
 	def __init__(self):
 		print("Initializing a SQLite_Selector_List class")
-		self.selector_list = []
+		self.selector_list = [str]
 	def __del__(self):
 		print("Destructuing a SQLite_Selector_List class")
 # Facilities

@@ -5,12 +5,15 @@ class SQLite_Database:
 #Constructs
 	def __init__(self):
 		print("Constructing a SQLite_Database class")
-		selector_list: SQLite_Selector_List
+		self.selector_list: SQLite_Selector_List
 	def __del__(self):
 		print("Destructuing a SQLite_Database class")
+		self.OnCleanup()
 #Facilities
 	def OnInit(self):
 		print("In SQLite_Database.OnInit()")
 		self.selector_list = SQLite_Selector_List()
 		self.selector_list.OnInit()
+	def OnCleanup(self):
+		print("Cleaningup a SQLite_Database class")
 
