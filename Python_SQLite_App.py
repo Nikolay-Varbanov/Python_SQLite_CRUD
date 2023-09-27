@@ -1,5 +1,19 @@
 print("Hey I'm working here!!!")
 
+# python imports
+
+# user imports
+from SQLite_Database import SQLite_Database
+
+# globals
+#user defined classes
+global database
+database: SQLite_Database
+
+# variables
+global running
+running: bool
+global engine_input
 engine_input: str
 
 
@@ -7,6 +21,11 @@ engine_input: str
 def OnInit(): # all initializations are done here
 	
 	print("In OnInit()")
+	# classes
+	global database
+	database = SQLite_Database()
+	database.OnInit()
+	# variables
 	global running
 	running = True
 	
