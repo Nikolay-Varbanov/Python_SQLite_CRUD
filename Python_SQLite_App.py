@@ -25,6 +25,7 @@ def OnInit(): # all initializations are done here
 	global database
 	database = SQLite_Database()
 	database.OnInit()
+	database.OnConnect('BasicCRUD')
 	# variables
 	global running
 	running = True
