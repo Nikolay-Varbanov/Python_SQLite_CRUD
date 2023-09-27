@@ -11,8 +11,11 @@ global database
 database: SQLite_Database
 
 # variables
-global running
+global running # Main Loop Control
 running: bool
+global auto_connect # if enabled it will automaticly try to connect to the first selector if available. See OnInit
+auto_connect: bool
+auto_connect = True
 global engine_input
 engine_input: str
 
@@ -21,11 +24,14 @@ engine_input: str
 def OnInit(): # all initializations are done here
 	
 	print("In OnInit()")
+	# variables
+	global auto_connect
 	# classes
 	global database
 	database = SQLite_Database()
 	database.OnInit()
-	database.OnConnect('BasicCRUD')
+	if auto_connect:
+		database.OnConnect(1)
 	# variables
 	global running
 	running = True

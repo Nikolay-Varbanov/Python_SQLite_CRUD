@@ -1,7 +1,7 @@
 class SQLite_Selector_List:
 	def __init__(self):
 		print("Initializing a SQLite_Selector_List class")
-		self.selector_list = [str]
+		self.selector_list = []
 	def __del__(self):
 		print("Destructuing a SQLite_Selector_List class")
 # Facilities
@@ -12,3 +12,9 @@ class SQLite_Selector_List:
 		if selector_input.isalpha():
 			print("Database to be imported is: ", selector_input)
 			self.selector_list.append(selector_input)
+	def getSelector(self, which: int):
+		which = which - 1
+		if (which >= 0 or which < len(self.selector_list)) and len(self.selector_list) > 0 :
+			return self.selector_list[which]
+		else:
+			return "NULL"
